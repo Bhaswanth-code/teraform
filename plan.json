@@ -1,0 +1,47 @@
+{
+  "format_version": "0.1",
+  "resource_changes": [
+    {
+      "address": "aws_instance.compromised_vm",
+      "type": "aws_instance",
+      "name": "compromised_vm",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "associate_public_ip_address": true,
+          "public_ip": "185.220.101.1",
+          "instance_type": "t2.micro",
+          "ami": "ami-0123456789abcdef0",
+          "tags": {
+            "Name": "demo-instance"
+          }
+        }
+      }
+    },
+    {
+      "address": "aws_vpc.suspicious_net",
+      "type": "aws_vpc",
+      "name": "suspicious_net",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "cidr_block": "185.220.101.0/24",
+          "tags": {
+            "Name": "net-demo"
+          }
+        }
+      }
+    },
+    {
+      "address": "aws_lb.api_endpoint",
+      "type": "aws_lb",
+      "name": "api_endpoint",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "endpoint": "185.220.101.1"
+        }
+      }
+    }
+  ]
+}
