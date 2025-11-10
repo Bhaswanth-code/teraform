@@ -5,6 +5,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
+
+
 # VPC and Subnet (Private Setup)
 resource "aws_vpc" "secure_vpc" {
   cidr_block = "10.0.0.0/16"
